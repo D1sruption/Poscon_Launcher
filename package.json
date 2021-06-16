@@ -1,0 +1,144 @@
+{
+  "name": "POSCONLauncherBeta",
+  "productName": "POSCON Launcher Beta",
+  "version": "0.0.28",
+  "description": "Positive Control Network",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "protocols": [
+    {
+      "name": "POSCON",
+      "role": "Viewer",
+      "schemes": [
+        "scheme1, scheme2"
+      ]
+    }
+  ],
+  "keywords": [],
+  "author": "POSCON",
+  "license": "MIT",
+  "directories": {
+    "buildResources": "src/"
+  },
+  "config": {
+    "forge": {
+      "electronPackagerConfig": {
+        "protocols": [
+          {
+            "name": "POSCON",
+            "role": "Viewer",
+            "schemes": [
+              "scheme1, scheme2"
+            ]
+          }
+        ]
+      },
+      "packagerConfig": {
+        "osxSign": {
+          "identity": "Developer ID Application: Aaron Fankhauser (CL7LMD787A)"
+        },
+        "icon": "src/assets/icons/ico/asset_6.ico",
+        "executableName": "POSCON Launcher Beta",
+        "asar": {
+          "unpackDir": "{src/js}"
+        },
+        "extendInfo": "Info.plist"
+      },
+      "electronWinstallerConfig": {
+        "iconUrl": "file:///C:/Users/aaron_fankhauser/Documents/Electron Projects/poscon_launcher/src/assets/icons/ico/asset_4.ico"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "POSCONLauncher_beta",
+            "iconUrl": "file:///C:/Users/aaron_fankhauser/Documents/Electron Projects/poscon_launcher/src/assets/icons/ico/asset_4.ico",
+            "loadingGif": "src/assets/images/POSCON_Logo_Animated.gif",
+            "setupIcon": "src/assets/icons/ico/asset_4.ico"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-nucleus",
+          "config": {
+            "host": "https://releases.poscon.net",
+            "appId": "2",
+            "channelId": "1d51c68a0a7b4e49f1362dc6c36832a2",
+            "token": "00358f78c16c1017df80385a19d68581"
+          }
+        }
+      ]
+    }
+  },
+  "icon": "src/assets/icons/ico/asset_4.ico",
+  "dependencies": {
+    "@google-cloud/storage": "^3.5.0",
+    "check-internet-connected": "^2.0.4",
+    "cross-zip": "^2.1.6",
+    "crypto-js": "^3.1.9-1",
+    "custom-electron-titlebar": "^3.1.0",
+    "diff": "^4.0.1",
+    "electron-dl": "^1.14.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-log": "^3.0.9",
+    "electron-settings": "^3.2.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-store": "^5.1.0",
+    "fs-extra": "^8.1.0",
+    "he": "^1.2.0",
+    "https": "^1.0.0",
+    "jquery": "^3.4.1",
+    "keytar": "5.0.0",
+    "node-fetch": "^2.6.0",
+    "node-gyp": "^6.0.1",
+    "poscon-api-client": "file:poscon-api-client",
+    "poscon-api-down": "file:poscon-api-down",
+    "progressbar.js": "^1.1.0",
+    "protocol": "^0.1.4",
+    "readline": "^1.3.0",
+    "regedit": "^3.0.3",
+    "shelljs": "^0.8.3",
+    "winreg": "^1.2.4"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.47",
+    "@electron-forge/maker-deb": "6.0.0-beta.33",
+    "@electron-forge/maker-dmg": "^6.0.0-beta.47",
+    "@electron-forge/maker-rpm": "6.0.0-beta.33",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.47",
+    "@electron-forge/maker-zip": "6.0.0-beta.33",
+    "@electron-forge/publisher-nucleus": "^6.0.0-beta.47",
+    "@types/keytar": "^4.4.2",
+    "@types/node": "^11.15.3",
+    "@types/node-fetch": "^2.5.4",
+    "electron": "^4.1.4",
+    "electron-rebuild": "^1.8.8",
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^9.2.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

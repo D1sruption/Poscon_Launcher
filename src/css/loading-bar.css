@@ -1,0 +1,26 @@
+.ldBar {
+    position:relative;
+    color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.ldBar.label-center > .ldBar-label {
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    text-shadow:0 0 3px #fff;
+    color: transparent;
+}
+
+.ldBar-label:after {
+    content:"USD";
+    display:inline;
+}
+
+.ldBar.no-percent .ldBar-label:after {
+    content:"";
+}

@@ -1,0 +1,54 @@
+body,
+html {
+    background-color:rgb(46, 6, 36);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#test {
+    width: 600px;
+    height: 20px;
+    background-color:rgb(46, 6, 36);
+    position: absolute;
+    top: 0;
+    -webkit-app-region: drag;
+}
+
+#test2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 0px;
+    padding-top: 0px;
+    color: white;
+    width: 25px;
+    height: 20px;
+    text-align: center;
+    -webkit-app-region: no-drag;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+#test2:hover {
+    background-color: gray;
+}
+
+.installedClients {
+    margin-left: 25px;
+    color: white;
+}
+
+h6 {
+    padding-left: 5px;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: white;
+    width: 550px;
+}
+
+h6:hover {
+    color:black;
+    background-color: white;
+}
